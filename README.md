@@ -21,7 +21,7 @@
 
 LIMITATION:
 * The type of drugs that cause death is not available. We could have narrow it down to who's producing such drugs and in what location is it killing the most.
-* Types os poison is not available. We could narrow it down to know if it's from companies or individuals.
-* Data about each country GDP is was not used. This would have narrow down why some health expenditure are decreasing and increasing. 
+* Types of poison causing death is not available. We could narrow it down to know if it's from companies or individuals.
+* Data about each country GDP was not used. This could help narrow down why some countries refused to invest more in health expenditure. 
 
 
