@@ -1,7 +1,21 @@
-## SUMMARY
+# 10Alytics Hackathon 2022
+## Tackling the Health Crises in Africa
+---
+## Entry by: Goodrich Okoro
+---
 ## [View Notebook](https://nbviewer.org/github/TelRich/Africa_Health_Analysis-10Alytics_Hackathon_2022/blob/main/health.ipynb?flush_cache=True)
+---
+The lack of access to adequate medical resources and facilities have led to the significant number of deaths. Some of these deaths could have been avoided by timely access to a medical professional or close proximity of hospitals.
 
-![](2022-12-04-14-53-13.png)
+Health systems across Africa are underfunded and understaffed. Less than half of African citizens (52%) – about 615 million people – have access to the health care they need, the quality of health services across the continent is generally poor, and family planning needs of half the continent’s women and girls are unmet
+
+### Let’s focus on Africa in this dataset
+You are required to provide solutions to the health challenges, especially in Africa. Ensure that you allow 
+all your creative self to shine through and remember, Africa looks up to you for a solution.
+
+![](images/2022-12-04-14-53-13.png)
+
+## SUMMARY
 
 1. In Africa, average of _134_ people die as a result of _terrorism_,  average of _46_ people die as a result of _drug use disorder_ while average of _379_ people die as a result of _poisoming_.
 
