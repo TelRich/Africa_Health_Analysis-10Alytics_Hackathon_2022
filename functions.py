@@ -1,5 +1,6 @@
 import plotly.express as px
 import pandas as pd
+import plotly.graph_objects as go
 
 # Function to plot africa map showing cause of death
 def map_plot(data, color):
@@ -52,21 +53,11 @@ def reshaper(top_data, df):
     long_df.groupby('Country Name')['Health Expenditure(% of GDP)'].sum()
     reshaped_df = long_df.pivot_table(index='Year', values='Health Expenditure(% of GDP)', columns='Country Name')
     return reshaped_df  
-  
-# Function to visualize top 5 countries with health expenditures  
-def add_year(region, color, data):
-    fig.add_trace(go.Scatter(x=data.index, y=data[region],
-                             mode="lines+markers",
-                             marker= dict(
-                                 symbol="diamond", size=3
-                             ),
-                            name=region, connectgaps=True,
-                            line=dict(color=color, width=2)))
 
 # Function to reshape age group data
-def reshaper1(top_data):
+def reshaper1(top_data,df):
     country_code = top_data['Code'].unique()
-    coutry_health_exp = nod_by_age[nod_by_age['Code'].isin(country_code)]
+    coutry_health_exp = df[df['Code'].isin(country_code)]
     long_df = pd.melt(coutry_health_exp, id_vars=['Entity' ,'Code', 'Year'], value_name='Death Count', var_name='Age', ignore_index=False)
     reshaped_df = long_df.groupby(['Entity', 'Age'], as_index=False)['Death Count'].mean()
     return reshaped_df  
@@ -85,9 +76,9 @@ def group_bar(data, title='Age Group Death'):
     return fig
 
 # Function to merge cause of the column with health expenditure
-def subset_merger(column):
-    sub = afr_nod_by_cause[['Entity', 'Code', 'Year', column]]
-    melt_health = pd.melt(health_exp, id_vars=['Country Name', 'Country Code', 'Indicator Name'], value_name='Health Expenditure(% of GDP)', var_name='Year', ignore_index=False)
+def subset_merger(column, df1, df2):
+    sub = df1[['Entity', 'Code', 'Year', column]]
+    melt_health = pd.melt(df2, id_vars=['Country Name', 'Country Code', 'Indicator Name'], value_name='Health Expenditure(% of GDP)', var_name='Year', ignore_index=False)
     sub_melt_health = melt_health[['Country Code', 'Year', 'Health Expenditure(% of GDP)']]
     merged = pd.merge(sub, sub_melt_health, 'inner', left_on=['Code', 'Year'], right_on=['Country Code', 'Year'])
     return merged
